@@ -1,51 +1,51 @@
-import { useState, useEffect } from 'react';
-import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
-import { Container } from 'react-bootstrap';
-import Header from './components/layout/Header';
-import Footer from './components/layout/Footer';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Dashboard from './pages/Dashboard';
-import UpdateHistory from './pages/UpdateHistory';
-import Calendar from './pages/Calendar';
-import NotFound from './pages/NotFound';
-import { AuthProvider } from './context/AuthContext';
-import PrivateRoute from './components/routing/PrivateRoute';
-import './App.css';
+import { useState, useEffect } from "react";
+import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Dashboard from "./pages/Dashboard";
+import UpdateHistory from "./pages/UpdateHistory";
+import Calendar from "./pages/Calendar";
+import NotFound from "./pages/NotFound";
+import { AuthProvider } from "./context/AuthContext";
+import PrivateRoute from "./components/routing/PrivateRoute";
+import "./App.css";
 
 function App() {
-  const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
+  // const [loading, setLoading] = useState(true);
+  // const navigate = useNavigate();
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-      navigate('/');  // Redirect to home page after loading finishes
-    }, 2000);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setLoading(false);
+  //     navigate('/');  // Redirect to home page after loading finishes
+  //   }, 2000);
 
-    return () => clearTimeout(timer);
-  }, [navigate]);
+  //   return () => clearTimeout(timer);
+  // }, [navigate]);
 
-  if (loading) {
-    return (
-      <div
-        className="loading-screen d-flex justify-content-center align-items-center"
-        style={{ height: '100vh' }}
-      >
-        <div className="text-center">
-          <div
-            className="spinner-border text-primary"
-            role="status"
-            style={{ width: '3rem', height: '3rem' }}
-          >
-            <span className="visually-hidden">Loading...</span>
-          </div>
-          <p className="mt-3">Starting up...</p>
-        </div>
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div
+  //       className="loading-screen d-flex justify-content-center align-items-center"
+  //       style={{ height: '100vh' }}
+  //     >
+  //       <div className="text-center">
+  //         <div
+  //           className="spinner-border text-primary"
+  //           role="status"
+  //           style={{ width: '3rem', height: '3rem' }}
+  //         >
+  //           <span className="visually-hidden">Loading...</span>
+  //         </div>
+  //         <p className="mt-3">Starting up...</p>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   return (
     <AuthProvider>

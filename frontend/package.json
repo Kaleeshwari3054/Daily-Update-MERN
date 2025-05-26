@@ -2,8 +2,6 @@
   "name": "daily-update-app",
   "private": true,
   "version": "0.1.0",
-  "type": "module",
-  "homepage": "https://kaleeshwari3054.github.io/Daily-Update-MERN",
   "scripts": {
     "dev": "vite",
     "start": "node backend/server.js",
